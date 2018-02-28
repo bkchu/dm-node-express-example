@@ -75,7 +75,7 @@ module.exports = {
   deleteCar: (req, res, next) => {
     const selected = cars.findIndex(val => val.id === parseInt(req.params.id));
     cars.splice(selected, 1);
-    cars.forEach((car, index, arr) => {
+    cars.forEach((car, index) => {
       car.id = index + 1;
     });
     res.status(200).json(cars);
